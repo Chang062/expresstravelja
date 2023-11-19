@@ -53,9 +53,8 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="rooms.php" class="nav-link">Rooms</a></li>
+                    <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <?php
                     if (!isset($_SESSION['userid'])) {
@@ -69,8 +68,7 @@
                                 User: <?php echo $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="viewBookings.php?id=<?php echo $_SESSION['userid']; ?>">Your Bookings</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php">Logout <span class="sr-only"></span></a>
                             </div>

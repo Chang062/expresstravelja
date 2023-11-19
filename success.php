@@ -29,22 +29,27 @@ if (isset($_POST['register'])) {
 if (isset($_POST['booknow'])) {
 
 
-    $check_in = $_POST['check_in'];
-    $check_out = $_POST['check_out'];
+
+    $check_in = date_create($_POST['check_in']);
+    $check_out = date_create($_POST['check_out']);
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
     $contact = $_POST['contact'];
     $hotel_id = $_POST['hotel_id'];
     $room_id = $_POST['room_id'];
-    $user_id = $_POST['user_id'];
+    $days = date_diff($check_in, $check_out);
+    $payment = $_POST['payment'] * intval($days->format('%R%a'));;
 
-    if (date("Y/m/d") > $check_in or date("Y/m/d") > $check_out) {
+    $_SESSION['price'] = $payment;
+
+    if (date("m/d/Y") > $check_in or date("m/d/Y") > $check_out) {
         echo "<script>alert('Error: You cannot choose a date in the past')</script>";
-    } else if ($check_in > $check_out or $check_in == date("Y/m/d")) {
+        echo "<script>window.location.href='room.php'</script>";
+    } else if ($check_in > $check_out or $check_in == date("m/d/Y")) {
         echo "<script>alert('error: Please check that you are entering the a valid date')</script>";
+        echo "<script>window.location.href='room.php'</script>";
     } else {
-        $isSuccess = $crud->insertBookings($full_name, $check_in, $check_out, $email, $contact, $hotel_name, $room_type, $user_id);
-        header("location: index.php");
+        $isSuccess = $crud->insertBookings($full_name, $check_in, $check_out, $email, $contact, $hotel_id, $room_id, $payment);
     }
 
 

@@ -4,7 +4,7 @@ require_once 'db/conn.php';
 require_once 'includes/auth_check.php';
 
 if (!isset($_GET['id'])) {
-    include 'includes/errormessage.php';
+    echo "<script>window.location.href='404.php'</script>";
 } else {
     $id = $_GET['id'];
     $result = $crud->getRoomDetails($id);
@@ -13,6 +13,7 @@ if (!isset($_GET['id'])) {
     $amenities->execute();
     $allamenities = $amenities->fetchAll(PDO::FETCH_OBJ);
 }
+//$_SESSION['price'] = $result["price"];
 
 
 ?>
@@ -73,7 +74,7 @@ if (!isset($_GET['id'])) {
                             <div class="form-group">
                                 <input type="hidden" class="form-control" id="hotel_id" name="hotel_id" value="<?php echo $result['hotel_id'] ?>">
                                 <input type="hidden" class="form-control" id="room_id" name="room_id" value="<?php echo $result['room_id'] ?>">
-                                <input type="hidden" class="form-control" id="user_id" name="user_id" value="<?php echo $_SESSION['id'] ?>">
+                                <input type="hidden" class="form-control" id="payment" name="payment" value="<?php echo $result['price'] ?>">
                             </div>
                         </div>
 

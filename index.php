@@ -30,7 +30,7 @@ $outcome = $crud->getRooms();
                             <h3 class="heading"><?php echo $r['name'] ?></h3>
                             <p><?php echo $r['description'] ?>.</p>
                             <p><?php echo $r['location'] ?></p>
-                            <p><a href="rooms.html" class="btn btn-primary">View rooms</a></p>
+                            <p><a href="rooms.php?id=<?php echo $r['id'] ?>" class="btn btn-primary">View rooms</a></p>
                         </div>
                     </div>
                 </div>
@@ -60,6 +60,7 @@ $outcome = $crud->getRooms();
                                     <li><span>Size:</span> <?php echo $o['size'] ?></li>
                                     <li><span>View:</span> <?php echo $o['view'] ?></li>
                                     <li><span>Bed:</span> <?php echo $o['beds'] ?></li>
+                                    <li><span>Per night:</span> $<?php echo $o['price'] ?>.00</li>
                                 </ul>
                                 <p class="pt-1"><a href="room.php?id=<?php echo $o['rm_id'] ?>" class="btn-custom px-3 py-2">Book Now <span class="icon-long-arrow-right"></span></a></p>
                             </div>
@@ -78,7 +79,7 @@ $outcome = $crud->getRooms();
             <div class="col-md-9 text-center">
                 <h2>Ready to get started</h2>
                 <p class="mb-4">It’s safe to book online with us! Get your dream stay in clicks or drop us a line with your questions.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Learn More</a> <a href="#" class="btn btn-white px-4 py-3">Contact us</a></p>
+                <p class="mb-0"><a href="about.php" class="btn btn-primary px-4 py-3">Learn More</a> <a href="contact.php" class="btn btn-white px-4 py-3">Contact us</a></p>
             </div>
         </div>
     </div>
