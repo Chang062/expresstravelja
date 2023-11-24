@@ -6,11 +6,9 @@ require_once 'db/conn.php';
 
 
 if (isset($_POST['register'])) {
-    $uname = $_POST['username'];
-    $email = $_POST['email'];
+    $uname = strtolower(trim($_POST['username']));
+    $email = strtolower(trim($_POST['email']));
     $password = $_POST['password'];
-    $email = $_POST['email'];
-
 
     $isSuccess = $users->insertUser($uname, $email, $password);
     header("location: login.php");
@@ -23,6 +21,14 @@ if (isset($_POST['register'])) {
     } else {
         include 'includes/errormessage.php';
     }*/
+}
+if (isset($_POST['createAdmin'])) {
+    $uname = strtolower(trim($_POST['username']));
+    $email = strtolower(trim($_POST['email']));
+    $password = $_POST['password'];
+
+    $isSuccess = $admins->insertAdmin($uname, $email, $password);
+    header("location: adminPanel/loginAdmins.php");
 }
 
 
@@ -51,11 +57,6 @@ if (isset($_POST['booknow'])) {
     } else {
         $isSuccess = $crud->insertBookings($full_name, $check_in, $check_out, $email, $contact, $hotel_id, $room_id, $payment);
     }
-
-
-
-
-
     /*
     if ($isSuccess) {
         SendEmail::SendMail($email, 'Welcome to ICT WORKSHOP', 'You have successfully registerted for Fall year\'s ICT WORKSHOP');
@@ -63,4 +64,36 @@ if (isset($_POST['booknow'])) {
     } else {
         include 'includes/errormessage.php';
     }*/
+}
+
+if (isset($_POST['createHotel'])) {
+    $name = $_POST['name'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+    $orig_file = $_FILES["image"]["tmp_name"];
+    $ext = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'images/';
+    $destination = "$target_dir$name.$ext";
+    move_uploaded_file($orig_file, $destination);
+
+
+    $isSuccess = $crud->insertHotel($name, $location, $description, $destination);
+    header("location: adminPanel/showHotels.php");
+}
+
+if (isset($_POST['updateHotel'])) {
+
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+
+    $result = $crud->updateHotel($id, $name, $location, $description);
+    if ($result) {
+        header("location: adminPanel/showHotels.php");
+    } else {
+        // header("location: adminPanel/errormessage.php");
+    }
+} else {
+    //header("location: adminPanel/errormessage.php");
 }

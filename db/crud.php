@@ -7,10 +7,71 @@ class crud
         $this->db = $conn;
     }
 
+    public function insertHotel($name, $location, $description, $image)
+    {
+        try {
+
+            $sql = "INSERT INTO hotels (name,location,description,image) VALUES (:name,:location,:description,:image)";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':name', $name);
+            $stmt->bindparam(':location', $location);
+            $stmt->bindparam(':description', $description);
+            $stmt->bindparam(':image', $image);
+
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function updateHotel($id, $name, $location, $description)
+    {
+        try {
+            $sql = "UPDATE `hotels` SET `name`=:name,`location`=:location,`description`=:description WHERE id = :id ";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->bindparam(':name', $name);
+            $stmt->bindparam(':location', $location);
+            $stmt->bindparam(':description', $description);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function deleteHotel($id)
+    {
+        try {
+            $sql = "DELETE FROM hotels WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+
+
     public function getHotels()
     {
         try {
             $sql = "SELECT * FROM hotels WHERE stats = 1";
+            $result = $this->db->query($sql);
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function getAllHotels()
+    {
+        try {
+            $sql = "SELECT * FROM hotels";
             $result = $this->db->query($sql);
             return $result;
         } catch (PDOException $e) {
