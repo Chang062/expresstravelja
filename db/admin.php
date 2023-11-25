@@ -14,7 +14,7 @@ class admin
         try {
             $result = $this->getAdminbyUsername($username);
             if ($result['num'] > 0) {
-                header("location: ../adminPanel/layouts/errormessage.php");
+                header("location: ../adminPanel/errormessage.php");
                 return false;
             } else {
                 $new_password = sha1($password . $username);
@@ -71,6 +71,20 @@ class admin
             $sql = "SELECT * FROM Admins";
             $result = $this->db->query($sql);
             return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public function deleteAdmin($id)
+    {
+        try {
+            $sql = "DELETE FROM admins WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            return true;
         } catch (PDOException $e) {
             echo $e->getMessage();
             return false;

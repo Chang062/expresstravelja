@@ -20,4 +20,4 @@ require_once 'user.php';
 $users = new user($pdo);
 require_once 'admin.php';
 $admins = new admin($pdo);
-/*$users->insertUser("admin", "password"); */
+//$admins->insertAdmin("admin", "admin@admin.org", "@dministrat0r");

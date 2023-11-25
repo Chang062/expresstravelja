@@ -121,7 +121,7 @@ class crud
     public function updateRoom($rm_id, $type, $hotel_id, $beds, $num_persons, $size, $view, $price)
     {
         try {
-            $sql = "UPDATE rooms SET 'type'=:type,'hotel_id'=:hotel_id,'beds'=:beds,'num_persons'=:num_persons,'size'=:size,'view'=:view,'price'=:price WHERE rm_id =:id";
+            $sql = "UPDATE rooms SET `type`=:type, hotel_id=:hotel_id, beds=:beds, num_persons=:num_persons, size=:size, view=:view, price=:price WHERE rm_id=:id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':id', $rm_id);
             $stmt->bindparam(':type', $type);

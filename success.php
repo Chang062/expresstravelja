@@ -127,5 +127,5 @@ if (isset($_POST['updateRooms'])) {
     $isSuccess = $crud->updateRoom($rm_id, $type, $hotel_id, $beds, $num_persons, $size, $view, $price);
 
 
-    //header("location: adminPanel/showRooms.php");
+    header("location: adminPanel/showRooms.php");
 }

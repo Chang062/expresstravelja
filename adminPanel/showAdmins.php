@@ -31,7 +31,7 @@ $results = $admins->getAdmins();
           <th scope="row"><?php echo $r['username'] ?></th>
           <td><?php echo $r['email'] ?></td>
           <td><?php echo $r['date_created'] ?></td>
-          <td> <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger">Delete</a>
+          <td> <a onclick="return confirm('Are you sure you want to delete this record?');" href="deleteAdmin.php?id=<?php echo $r['id'] ?>" class="btn btn-danger">Delete</a>
           </td>
 
 
