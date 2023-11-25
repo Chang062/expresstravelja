@@ -2,7 +2,7 @@
 $title = "Success";
 require_once 'includes/header.php';
 require_once 'db/conn.php';
-//require_once 'sendemail.php';
+require_once 'sendEmail.php';
 
 
 if (isset($_POST['register'])) {
@@ -13,14 +13,12 @@ if (isset($_POST['register'])) {
     $isSuccess = $users->insertUser($uname, $email, $password);
     header("location: login.php");
 
-
-    /*
     if ($isSuccess) {
-        SendEmail::SendMail($email, 'Welcome to ICT WORKSHOP', 'You have successfully registerted for Fall year\'s ICT WORKSHOP');
+        SendEmail::SendMail($email, 'Your Account With Express TravelJA Was successfully created', 'You may log into your account now');
         include 'includes/successmessage.php';
     } else {
         include 'includes/errormessage.php';
-    }*/
+    }
 }
 if (isset($_POST['createAdmin'])) {
     $uname = strtolower(trim($_POST['username']));
@@ -57,13 +55,13 @@ if (isset($_POST['booknow'])) {
     } else {
         $isSuccess = $crud->insertBookings($full_name, $check_in, $check_out, $email, $contact, $hotel_id, $room_id, $payment);
     }
-    /*
+
     if ($isSuccess) {
-        SendEmail::SendMail($email, 'Welcome to ICT WORKSHOP', 'You have successfully registerted for Fall year\'s ICT WORKSHOP');
+        SendEmail::SendMail($email, 'Thank you for booking with us', 'Tour booking will be confirmed within 24hrs, please log into your account to view your booking status');
         include 'includes/successmessage.php';
     } else {
         include 'includes/errormessage.php';
-    }*/
+    }
 }
 
 if (isset($_POST['createHotel'])) {
@@ -127,5 +125,7 @@ if (isset($_POST['updateRooms'])) {
     $price = $_POST['price'];
 
     $isSuccess = $crud->updateRoom($rm_id, $type, $hotel_id, $beds, $num_persons, $size, $view, $price);
+
+
     //header("location: adminPanel/showRooms.php");
 }

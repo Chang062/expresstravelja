@@ -1,4 +1,6 @@
-<?php require_once "layouts/header.php";
+<?php
+$title = "Admins";
+require_once "layouts/header.php";
 require_once "../db/conn.php";
 
 if (!isset($_SESSION['username'])) {

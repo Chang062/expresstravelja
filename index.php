@@ -28,7 +28,6 @@ $outcome = $crud->getRooms();
                         <div class="img" style="background-image: url(<?php echo $r['image'] ?>);"></div>
                         <div class="media-body py-4 px-3">
                             <h3 class="heading"><?php echo $r['name'] ?></h3>
-                            <p><?php echo $r['description'] ?>.</p>
                             <p><?php echo $r['location'] ?></p>
                             <p><a href="rooms.php?id=<?php echo $r['id'] ?>" class="btn btn-primary">View rooms</a></p>
                         </div>

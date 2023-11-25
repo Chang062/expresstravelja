@@ -98,8 +98,10 @@ if (!isset($_GET['id'])) {
             <div class="col-md-6 wrap-about">
                 <div class="img img-2 mb-4" style="background-image: url(<?php echo $result['rm_image'] ?>);">
                 </div>
-                <h2>The most recommended vacation rental</h2>
-                <p>something to go here.</p>
+                <h2> <?php echo $result['name']
+                        ?></h2>
+                <p> <?php echo $result['description']
+                    ?></p>
             </div>
             <div class="col-md-6 wrap-about ftco-animate">
                 <div class="heading-section">
@@ -119,7 +121,7 @@ if (!isset($_GET['id'])) {
                                 </div>
                                 <div class="media-body pl-3">
                                     <h3 class="heading"><?php echo $amenity->utility_name; ?></h3>
-                                    <p><?php echo $amenity->description; ?></p>
+                                    <p><?php echo $amenity->descriptions; ?></p>
                                 </div>
                             </div>
                         <?php endforeach ?>

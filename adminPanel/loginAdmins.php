@@ -1,4 +1,6 @@
-<?php require_once "layouts/header.php";
+<?php
+$title = "Login";
+require_once "layouts/header.php";
 require_once "../db/conn.php";
 
 

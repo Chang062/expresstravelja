@@ -1,12 +1,15 @@
-<<?php require_once "layouts/header.php";
+<<?php
+  $title = "Bookings";
+  require_once "layouts/header.php";
   require_once "../db/conn.php";
   if (!isset($_SESSION['username'])) {
     echo "<script>window.location.href='loginAdmins.php'</script>";
   } else {
 
-    $bookings = $pdo->query("SELECT * FROM ((bookings b inner join hotels h on h.id = b.hotel_id) inner join rooms r on r.rm_id = b.room_id) ");
+    $bookings = $pdo->query("SELECT b.id,b.full_name,b.email,b.contact,b.status,b.check_in,b.check_out,r.type,h.name,b.date_created  FROM ((bookings b inner join hotels h on h.id = b.hotel_id) inner join rooms r on r.rm_id = b.room_id) ");
     $bookings->execute();
     $allbookings = $bookings->fetchAll(PDO::FETCH_OBJ);
+    // var_dump($allbookings);
   } ?> <div class="container">
   <h1 class="mb-4">Booking History</h1>
   <?php if (count($allbookings) > 0) : ?>
@@ -40,7 +43,7 @@
 
             <td><?php echo $b->status ?></td>
             <td><?php echo $b->date_created ?></td>
-            <td> <a href="statusHotel.php?id=<?php echo $r['id'] ?>" class="btn btn-primary">Change Status</a></td>
+            <td> <a href="statusBookings.php?id=<?php echo $b->id ?>" class="btn btn-primary">Change Status</a></td>
           </tr>
         <?php endforeach ?>
       </tbody>

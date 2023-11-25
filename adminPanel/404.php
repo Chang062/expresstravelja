@@ -1,4 +1,6 @@
-<?php require_once 'layouts/header.php'; ?>
+<?php
+$title = "404";
+require_once 'layouts/header.php'; ?>
 
 
 <div class="d-flex align-items-center justify-content-center vh-100">

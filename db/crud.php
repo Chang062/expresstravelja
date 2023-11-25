@@ -123,7 +123,7 @@ class crud
         try {
             $sql = "UPDATE rooms SET 'type'=:type,'hotel_id'=:hotel_id,'beds'=:beds,'num_persons'=:num_persons,'size'=:size,'view'=:view,'price'=:price WHERE rm_id =:id";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindparam(':rm_id', $rm_id);
+            $stmt->bindparam(':id', $rm_id);
             $stmt->bindparam(':type', $type);
             $stmt->bindparam(':hotel_id', $hotel_id);
             $stmt->bindparam(':beds', $beds);
@@ -177,8 +177,9 @@ class crud
     public function getRoomDetails($id)
     {
         try {
-            $sql = "SELECT * from utilities u inner join rooms r on u.room_id = r.rm_id 
+            $sql = "SELECT * from ((utilities u inner join rooms r on u.room_id = r.rm_id) inner join hotels h on r.hotel_id = h.id)
                 where room_id = :id";
+
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':id', $id);
             $stmt->execute();

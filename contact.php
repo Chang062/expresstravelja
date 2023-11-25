@@ -21,8 +21,8 @@ require "includes/header.php"; ?>
             </div>
             <div class="col-md-4 p-4 p-md-5 bg-white">
                 <h2 class="font-weight-bold mb-4">Lets get started</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <p><a href="#" class="btn btn-primary">Book Apartment Now</a></p>
+                <p>When you take time away from the stresses of work and daily life, it can improve our physical and mental health, motivation, relationships, job performance and perspective. A vacation can help you feel refreshed and more prepared to handle whatever comes when you return.</p>
+                <p><a href="#" class="btn btn-primary">Book A Hotel Room Now</a></p>
             </div>
             <div class="col-md-12">
                 <div class="wrapper">
@@ -95,7 +95,7 @@ require "includes/header.php"; ?>
                                         <span class="fa fa-paper-plane"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">customersevice@travelexpressja.com</a></p>
+                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">customersevice@expresstravelja.com</a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">

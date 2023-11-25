@@ -20,7 +20,9 @@ require "includes/header.php"; ?>
                     <div class="img" style="background-image: url(images/services-1.jpg);"></div>
                     <div class="media-body py-4 px-3">
                         <h3 class="heading">Map Direction</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p>In the Maps app , you can get detailed driving directions to your destination.
+                            When you drive in select cities, you see enhanced details for crosswalks, bike lanes, buildings, and a
+                            street-level perspective that helps you find the right lane as you approach complex interchanges</p>
                         <p><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
@@ -30,7 +32,9 @@ require "includes/header.php"; ?>
                     <div class="img" style="background-image: url(images/services-2.jpg);"></div>
                     <div class="media-body py-4 px-3">
                         <h3 class="heading">Accomodation Services</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p>The hotel industry is the industry surrounding the provision of short-term guest accommodation and related services.
+                            While the name suggests it is centered around hotels, it includes many different accommodation types.
+                            However, permanent or long-term accommodation is not included under the most widely accepted definition.</p>
                         <p><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
@@ -40,7 +44,8 @@ require "includes/header.php"; ?>
                     <div class="img" style="background-image: url(images/image_2.jpg);"></div>
                     <div class="media-body py-4 px-3">
                         <h3 class="heading">Great Experience</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p>Majestic waterfalls, grand rivers and lush landscapes are just the beginning of the journey. History: As one of the most diverse places in the world,
+                            vacating in Jamaica is a fascinating experience. Adventure: The island of rhythm and sway is also the island of adventure</p>
                         <p><a href="#" class="btn btn-primary">Read more</a></p>
                     </div>
                 </div>
@@ -62,13 +67,13 @@ require "includes/header.php"; ?>
                 <div class="carousel-testimony owl-carousel">
                     <div class="item">
                         <div class="testimony-wrap d-flex">
-                            <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                            <div class="user-img" style="background-image: url(images/person_3.jpg)">
                             </div>
                             <div class="text pl-4">
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="fa fa-quote-left"></i>
                                 </span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <p>ExpressTravelJA prices are low compared to other travel agencies websites. The hotel reviews are of visitors from all over the world traveling, taking vacation, sharing their opinions and experience. </p>
                                 <p class="name">Racky Henderson</p>
                                 <span class="position">Father</span>
                             </div>
@@ -76,13 +81,13 @@ require "includes/header.php"; ?>
                     </div>
                     <div class="item">
                         <div class="testimony-wrap d-flex">
-                            <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                            <div class="user-img" style="background-image: url(images/person-1.jpg)">
                             </div>
                             <div class="text pl-4">
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="fa fa-quote-left"></i>
                                 </span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <p>Excellent site. Gives options of booking with or without cancellation options. A must in this covid19 environment. The site clearly lists all room options at the business or resort hotel with photos making an informed selection easy</p>
                                 <p class="name">Henry Dee</p>
                                 <span class="position">Businesswoman</span>
                             </div>
@@ -90,13 +95,13 @@ require "includes/header.php"; ?>
                     </div>
                     <div class="item">
                         <div class="testimony-wrap d-flex">
-                            <div class="user-img" style="background-image: url(images/person_3.jpg)">
+                            <div class="user-img" style="background-image: url(images/person-3.jpg)">
                             </div>
                             <div class="text pl-4">
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="fa fa-quote-left"></i>
                                 </span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <p>Most sites are fairly easy to use. To really get to want you want, you have to wade through the sites. With ExpressTravelJA, it is all in one site, offers not bad prices but it takes awhile to get through everything. </p>
                                 <p class="name">Mark Huff</p>
                                 <span class="position">Businesswoman</span>
                             </div>
@@ -110,9 +115,9 @@ require "includes/header.php"; ?>
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="fa fa-quote-left"></i>
                                 </span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <p>I am very pleased with ExpressTravelJA and their customer service. I recently used them to book on my vacation. </p>
                                 <p class="name">Rodel Golez</p>
-                                <span class="position">Businesswoman</span>
+                                <span class="position">Businessman</span>
                             </div>
                         </div>
                     </div>
@@ -126,7 +131,7 @@ require "includes/header.php"; ?>
                                 </span>
                                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                 <p class="name">Ken Bosh</p>
-                                <span class="position">Businesswoman</span>
+                                <span class="position">Businessman</span>
                             </div>
                         </div>
                     </div>
