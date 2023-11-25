@@ -14,7 +14,7 @@ if (!isset($_GET['id'])) {
 }
 
 ?>
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/<?php echo $hotel['image'] ?>');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo $hotel['image'] ?>');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -34,7 +34,7 @@ if (!isset($_GET['id'])) {
             <?php foreach ($allroom as $r) : ?>
                 <div class="col-lg-6">
                     <div class="room-wrap d-md-flex">
-                        <a href="#" class="img order-md-last" style="background-image: url(images/<?php echo $r->rm_image ?>);"></a>
+                        <a href="#" class="img order-md-last" style="background-image: url(<?php echo $r->rm_image ?>);"></a>
                         <div class="half right-arrow d-flex align-items-center">
                             <div class="text p-4 p-xl-5 text-center">
                                 <p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>

@@ -53,12 +53,22 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="showBookings.php" class="nav-link">Booking History</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotels
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="createHotels.php">Create Hotel <span class="sr-only"></span></a>
                             <a class="dropdown-item" href="showHotels.php">View All Hotel <span class="sr-only"></span></a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Rooms
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="createRooms.php">Create Room <span class="sr-only"></span></a>
+                            <a class="dropdown-item" href="showRooms.php">View All Rooms <span class="sr-only"></span></a>
 
                         </div>
                     </li>
@@ -73,7 +83,7 @@
                                 User: <?php echo $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="viewBookings.php">View All Bookings</a>
+                                <a class="dropdown-item" href="showBookings.php">View All Bookings</a>
                                 <a class="dropdown-item" href="createAdmins.php">Create New Admin <span class="sr-only"></span></a>
                                 <a class="dropdown-item" href="showAdmins.php">View All Admins <span class="sr-only"></span></a>
                                 <div class="dropdown-divider"></div>

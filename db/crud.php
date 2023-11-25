@@ -41,6 +41,21 @@ class crud
             return false;
         }
     }
+    public function getHotelById($id)
+    {
+        try {
+            $sql = "SELECT * FROM `hotels` where id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
     public function deleteHotel($id)
     {
         try {
@@ -79,11 +94,79 @@ class crud
             return false;
         }
     }
+    public function insertRoom($type, $hotel_id, $beds, $num_persons, $size, $view, $price, $rm_image)
+    {
+        try {
 
+            $sql = "INSERT INTO rooms (type,hotel_id,beds,num_persons,size,view,price,rm_image) VALUES (:type,:hotel_id,:beds,:num_persons,:size,:view,:price,:rm_image)";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':type', $type);
+            $stmt->bindparam(':hotel_id', $hotel_id);
+            $stmt->bindparam(':beds', $beds);
+            $stmt->bindparam(':num_persons', $num_persons);
+            $stmt->bindparam(':size', $size);
+            $stmt->bindparam(':view', $view);
+            $stmt->bindparam(':price', $price);
+
+            $stmt->bindparam(':rm_image', $rm_image);
+
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public function updateRoom($rm_id, $type, $hotel_id, $beds, $num_persons, $size, $view, $price)
+    {
+        try {
+            $sql = "UPDATE rooms SET 'type'=:type,'hotel_id'=:hotel_id,'beds'=:beds,'num_persons'=:num_persons,'size'=:size,'view'=:view,'price'=:price WHERE rm_id =:id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':rm_id', $rm_id);
+            $stmt->bindparam(':type', $type);
+            $stmt->bindparam(':hotel_id', $hotel_id);
+            $stmt->bindparam(':beds', $beds);
+            $stmt->bindparam(':num_persons', $num_persons);
+            $stmt->bindparam(':size', $size);
+            $stmt->bindparam(':view', $view);
+            $stmt->bindparam(':price', $price);
+
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function deleteRoom($id)
+    {
+        try {
+            $sql = "DELETE FROM rooms WHERE rm_id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id', $id);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
     public function getRooms()
     {
         try {
             $sql = "SELECT * FROM `rooms` r inner join hotels h on r.hotel_id = h.id WHERE stat = 1";
+            $result = $this->db->query($sql);
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public function getAllRooms()
+    {
+        try {
+            $sql = "SELECT * FROM `rooms` r inner join hotels h on r.hotel_id = h.id";
             $result = $this->db->query($sql);
             return $result;
         } catch (PDOException $e) {
@@ -106,10 +189,11 @@ class crud
             return false;
         }
     }
-    public function getHotelById($id)
+    public function getRoomById($id)
     {
         try {
-            $sql = "SELECT * FROM `hotels` where id = :id";
+            $sql = "SELECT * FROM `rooms` r inner join hotels h on r.hotel_id = h.id 
+                where rm_id = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':id', $id);
             $stmt->execute();
@@ -120,6 +204,7 @@ class crud
             return false;
         }
     }
+
 
     public function insertBookings($full_name, $check_in, $check_out, $email, $contact, $hotel_id, $room_id, $payment)
     {

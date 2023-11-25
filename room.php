@@ -96,7 +96,7 @@ if (!isset($_GET['id'])) {
     <div class="container">
         <div class="row no-gutters">
             <div class="col-md-6 wrap-about">
-                <div class="img img-2 mb-4" style="background-image: url(images/<?php echo $result['rm_image'] ?>);">
+                <div class="img img-2 mb-4" style="background-image: url(<?php echo $result['rm_image'] ?>);">
                 </div>
                 <h2>The most recommended vacation rental</h2>
                 <p>something to go here.</p>

@@ -25,7 +25,7 @@ $outcome = $crud->getRooms();
             <?php while ($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="col-md-4 d-flex services align-self-stretch px-4 ftco-animate">
                     <div class="d-block services-wrap text-center">
-                        <div class="img" style="background-image: url(images/<?php echo $r['image'] ?>);"></div>
+                        <div class="img" style="background-image: url(<?php echo $r['image'] ?>);"></div>
                         <div class="media-body py-4 px-3">
                             <h3 class="heading"><?php echo $r['name'] ?></h3>
                             <p><?php echo $r['description'] ?>.</p>
@@ -50,7 +50,7 @@ $outcome = $crud->getRooms();
             <?php while ($o = $outcome->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="col-lg-6">
                     <div class="room-wrap d-md-flex">
-                        <a href="#" class="img order-md-last" style="background-image: url(images/<?php echo $o['rm_image'] ?>);"></a>
+                        <a href="#" class="img order-md-last" style="background-image: url(<?php echo $o['rm_image'] ?>);"></a>
                         <div class="half right-arrow d-flex align-items-center">
                             <div class="text p-4 p-xl-5 text-center">
                                 <p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>

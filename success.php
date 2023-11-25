@@ -97,3 +97,35 @@ if (isset($_POST['updateHotel'])) {
 } else {
     //header("location: adminPanel/errormessage.php");
 }
+
+if (isset($_POST['createRooms'])) {
+    $type = $_POST['type'];
+    $hotel_id = $_POST['hotel_id'];
+    $beds = $_POST['beds'];
+    $num_persons = $_POST['num_persons'];
+    $size = $_POST['size'];
+    $view = $_POST['view'];
+    $price = $_POST['price'];
+    $orig_file = $_FILES["rm_image"]["tmp_name"];
+    $ext = pathinfo($_FILES["rm_image"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'images/';
+    $destination = "$target_dir$view$type$hotel_id.$ext";
+    move_uploaded_file($orig_file, $destination);
+
+
+    $isSuccess = $crud->insertRoom($type, $hotel_id, $beds, $num_persons, $size, $view, $price, $destination);
+    header("location: adminPanel/showRooms.php");
+}
+if (isset($_POST['updateRooms'])) {
+    $rm_id = $_POST['rm_id'];
+    $type = $_POST['type'];
+    $hotel_id = $_POST['hotel_id'];
+    $beds = $_POST['beds'];
+    $num_persons = $_POST['num_persons'];
+    $size = $_POST['size'];
+    $view = $_POST['view'];
+    $price = $_POST['price'];
+
+    $isSuccess = $crud->updateRoom($rm_id, $type, $hotel_id, $beds, $num_persons, $size, $view, $price);
+    //header("location: adminPanel/showRooms.php");
+}
